@@ -34,8 +34,9 @@ class Deck:
 
 
 if __name__ == '__main__':
-    deck = Deck()
-    deck.add(Card("red", 2))
+    deck: Deck = Deck()
+    card1: Card = Card("red", 2)
+    deck.add(card1)
     deck.add(Card("red", 3))
     print(deck.all_the_same_color())
     deck.add(Card("black", 5))
