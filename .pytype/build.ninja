@@ -1,0 +1,9 @@
+rule infer
+  command = /home/nen/master/typilus/venv/bin/python3 -m pytype.single --imports_info $imports --module-name $module -V 3.6 -o $out --no-report-errors --nofail --quick $in
+  description = infer $module
+rule check
+  command = /home/nen/master/typilus/venv/bin/python3 -m pytype.single --imports_info $imports --module-name $module -V 3.6 -o $out --analyze-annotated --nofail --quick $in
+  description = check $module
+build /home/nen/master/typilus/activateit/.pytype/pyi/comp.pyi: check /home/nen/master/typilus/activateit/comp.py
+  imports = /home/nen/master/typilus/activateit/.pytype/imports/comp.imports
+  module = comp
