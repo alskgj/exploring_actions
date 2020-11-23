@@ -1,5 +1,6 @@
 import random
 
+
 class Card:
     def __init__(self, color, value):
         self.color = color
@@ -12,6 +13,7 @@ class Card:
         if self.color == other.color and self.value == other.value:
             return True
         return False
+
 
 class Deck:
     def __init__(self):
